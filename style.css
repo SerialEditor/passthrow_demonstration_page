@@ -17,8 +17,9 @@ body {
     display: flex;
     gap: 20px;
     margin-bottom: 20px;
-    overflow-x: scroll;
+    overflow-x: auto;
     scrollbar-width: 0;
+    scroll-snap-type: x mandatory;
 }
 
 .container::-webkit-scrollbar {
@@ -45,6 +46,8 @@ body {
     color: rgba(255, 255, 255, 0.5);
     background-color: #1c3e64;
     border-radius: 10px;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
 }
 
 .list__item:first-child {
@@ -72,7 +75,11 @@ body {
 
 .section-control-btns {
     margin-bottom: 20px;
-} 
+}
+
+.card-scroll-btns {
+    display: none;
+}
 
 .btn {
     font-size: 28px;
@@ -106,4 +113,10 @@ body {
 
 .card-scroll-btn:focus {
     background-color: #081e38;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .card-scroll-btns {
+        display: flex;
+    }
 }
